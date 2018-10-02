@@ -4,9 +4,12 @@
   "description": "Typescrypt based IoT framework for general purpose remote monitoring/control.",
   "main": "src/main.js",
   "scripts": {
-    "start": "npm run build-clean && node ./build/main.js",
-    "test": "node test.js",
+    "start": "node ./build/main.js",
     "buildwatch": "tsc --w --lib es2015 ./src/main.ts --outDir ./build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://iotnxt@vs-ssh.visualstudio.com:22/IoT.nxt/_ssh/IoTnxt.TRex"
   },
   "keywords": [
     "trex",
@@ -16,7 +19,7 @@
     "node",
     "ts"
   ],
-  "author": "Tobie Albertsd IoT.nxt",
+  "author": "Rouan van der Ende",
   "license": "ISC",
   "dependencies": {
     "@types/deep-diff": "0.0.31",
