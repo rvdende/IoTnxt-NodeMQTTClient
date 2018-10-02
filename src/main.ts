@@ -1,151 +1,43 @@
-import { ConfigService } from './services/config-service';
-import { PersistenceService } from './services/persistence/persistence-service';
-import { IGatewayConfiguration } from './abstractions/IGatewayConfiguration'
-import iotnxt = require("./utils/iotnxt.queueClient.v3");
-import * as utils from './utils/trex.utils';
+import * as iotnxt from "./iotnxt/iotnxt";
 
-
-var starttime = Date.now();
-
-var fs = require("fs");
-
-/* ------------------------------------------------------------------------- */
-import { config } from "./config";
-
-utils.log("START");
-utils.log("IoT.nxt " + iotnxt.version);
-utils.log("T-Rex " + config.FirmwareVersion);
-utils.log("CONFIG: "+ config.id);
-
-/* ------------------------------------------------------------------------- */
-
-let gateway: IGatewayConfiguration = {
-  GatewayId: config.GatewayId,
-  Make: config.Make,
-  Model: config.Model,
-  FirmwareVersion: config.FirmwareVersion,
-  Location: config.Location,
-  Secret: config.secretkey,
-  Devices: {},
-  GatewayFirstContact: false,
-  IsIoTHubDevice: false,
-  Config: {},
-  ClientId: ""
-}
-
-// SPECIFY CLIENT SPECIFIC DEVICES:
-import * as pluginRaspberrypi from "./plugins/raspberrypi/raspberrypi";
-
-import { Devices } from "./client/devices";
-
-gateway.Devices = Devices
-
-var state: iotnxt.ITrexState = { "deviceGroups": {} };
-
-import { trexVersion } from "./version"
-
-iotnxt.updateState(state, "TREX|1:TREX|1", "BRANCH", trexVersion.branch);
-iotnxt.updateState(state, "TREX|1:TREX|1", "VERSION", trexVersion.version);
-
-//DEFAULTS ALL TO ZERO/FALSE/UNKNOWN
-iotnxt.updateState(state, "TEMPSENSOR|1:TEMPSENSOR|1", "TEMPERATURE", "UNKNOWN");
-
-
-/* ------------------------------------------------------------------------- */
-// STARTUP/CONNECT
-
-// Alternatively set this in /src/config.ts
-//config.GatewayId = "CHANGETHIS";
-//config.secretkey = "SOMERANDOMSECRETFROMHW";
-
-gateway.GatewayId = config.GatewayId;
-gateway.Secret = config.secretkey;
-
-connectQueue();
-
-/* ------------------------------------------------------------------------- */
-// only to update timestamp
-setInterval(function () { iotnxt.updateState(state, "TREX|1:TREX|1", "TIMESTAMPISO", new Date().toISOString()); }, 100);
-
-// update sensors:
-setInterval(function () {
-  iotnxt.updateState(state, "TEMPSENSOR|1:TEMPSENSOR|1", "VALUE", Math.random()*100 );
-  if (iotnxt.connected) { iotnxt.publishState(state); }
-}, 2500); 
-
-var heartbeat = setInterval(() => { 
-  if (iotnxt.connected) { iotnxt.publishState(state); }
-}, config.heartbeatInterval);
-
-/* ------------------------------------------------------------------------- */
-
-function connectQueue() {
-  iotnxt.connect(config, gateway, { logging: true }, function (queue) {
-    queue.subscribe(config.RoutingKeyBase + ".REQ");
-    queue.on('message', handleIncomingRequests);
-  });
-}
-
-
-function handleIncomingRequests(topic: any, message: any, packet: any) {
-  var json = JSON.parse(message.toString());
-  var payload = new Buffer(json.Payload, "base64");
-  var payloadJSON = JSON.parse(payload.toString());
-
-  console.log(payloadJSON);
-}
-
-/* ------------------------------------------------------------------------- */
-
-
-
-
-
-/* ------------------------------------------------------------------------- */
-/* PERSISTANCE */
-
-async function persistance() {
-  try {
-    try {
-      await PersistenceService.checkTableExists();
-    } catch (error) {
-      await PersistenceService.createTable()
+var deviceTree = {};
+deviceTree["asdf|1:zxcv|1"] = {
+  Make: null,
+  Model: null,
+  DeviceName: "asdf|1:zxcv|1",
+  DeviceType: "asdf",
+  Properties: {
+    hello: {
+      PropertyName: "hello",
+      DataType: null
     }
-
-    //await setupConfig(); // Could read from a file in the future
-    //setupDevices();
-    //setHeartbeat();
-    //setDeviceUpdate();
-
-    iotnxt.publishHistorySeries();
-
-  } catch (error) {
-    console.error(error);
   }
+};
 
-}
+var iotnxtqueue = new iotnxt.IotnxtQueue(
+  {
+    GatewayId: "ROUANTEST",
+    secretkey: "asdf1234zxcv",
+    FirmwareVersion: "5.0.25",
+    Make: "IoT.nxt",
+    Model: "nodejs client",
+    id: "rouan test",
+    publickey: "<RSAKeyValue><Exponent>AQAB</Exponent><Modulus>rbltknM3wO5/TAEigft0RDlI6R9yPttweDXtmXjmpxwcuVtqJgNbIQ3VduGVlG6sOg20iEbBWMCdwJ3HZTrtn7qpXRdJBqDUNye4Xbwp1Dp+zMFpgEsCklM7c6/iIq14nymhNo9Cn3eBBM3yZzUKJuPn9CTZSOtCenSbae9X9bnHSW2qB1qRSQ2M03VppBYAyMjZvP1wSDVNuvCtjU2Lg/8o/t231E/U+s1Jk0IvdD6rLdoi91c3Bmp00rVMPxOjvKmOjgPfE5LESRPMlUli4kJFWxBwbXuhFY+TK2I+BUpiYYKX+4YL3OFrn/EpO4bNcI0NHelbWGqZg57x7rNe9Q==</Modulus></RSAKeyValue>",
+    hostaddress: "greenqueue.prod.iotnxt.io"
+  },
+  deviceTree,
+  true
+);
 
 
-persistance();
 
-/* ------------------------------------------------------------------------- */
-setInterval(function() {
-  //check connection and reconnect
-  if (iotnxt.connected) {
-    utils.log("[IOTNXT] Connected.")
-  } else {
-    utils.log("[IOTNXT] Disconnected.")
-    connectQueue();
-  }
-},30000)
+iotnxtqueue.on("connect", ()=>{
+  console.log("CONNECTED...")
 
-/* ------------------------------------------------------------------------- */
-// ERROR HANDLING
+  setInterval(()=>{
+    console.log("sending data...")
+    iotnxtqueue.updateState("asdf|1:zxcv|1", "hello", Math.random())
+    iotnxtqueue.publishState();
+  },2500)
 
-process.on('uncaughtException', function (err:Error) { })
-
-/* ------------------------------------------------------------------------- */
-
-fs.watchFile('version.js', (curr:any, prev:any) => { process.exit(); }); //auto restart on version update.
-
-export function setRoutingKeyBase(inRoutingKeyBase:string) { config.RoutingKeyBase = inRoutingKeyBase; }
+})
