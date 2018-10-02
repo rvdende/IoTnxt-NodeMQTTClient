@@ -1,18 +1,48 @@
 {
-  "name": "_01_iotnxtNodejs",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "iotnxt.trex",
+  "version": "3.0.1",
+  "description": "Typescrypt based IoT framework for general purpose remote monitoring/control.",
+  "main": "src/main.js",
   "scripts": {
+    "start": "npm run build-clean && node ./build/main.js",
+    "test": "node test.js",
     "buildwatch": "tsc --w --lib es2015 ./src/main.ts --outDir ./build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-clean": "rmdir build /s /q && tsc"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "ssh://iotnxt@vs-ssh.visualstudio.com:22/IoT.nxt/_ssh/IoTnxt.TRex"
+  },
+  "keywords": [
+    "trex",
+    "iot",
+    "iotnxt",
+    "rpi",
+    "node",
+    "ts"
+  ],
+  "author": "Rouan van der Ende",
   "license": "ISC",
   "dependencies": {
+    "@types/deep-diff": "0.0.31",
+    "@types/es6-promise": "^3.3.0",
+    "@types/lodash": "^4.14.112",
     "@types/mqtt": "^2.5.0",
-    "@types/node": "^10.11.3",
-    "mqtt": "^2.18.8"
+    "@types/node": "^9.6.23",
+    "@types/sqlite3": "^3.1.3",
+    "azure-storage": "^2.9.0-preview",
+    "getmac": "^1.4.3",
+    "lodash": "^4.17.10",
+    "mkdirp": "^0.5.1",
+    "mqtt": "^2.18.2",
+    "mv": "^2.1.1",
+    "python-shell": "^0.5.0",
+    "sqlite3": "^4.0.2",
+    "underscore": "^1.9.1",
+    "unzipper": "^0.8.14"
+  },
+  "devDependencies": {
+    "ts-node": "^6.1.1",
+    "typescript": "^2.9.2"
   }
 }
