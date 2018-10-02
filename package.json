@@ -9,10 +9,6 @@
     "buildwatch": "tsc --w --lib es2015 ./src/main.ts --outDir ./build",
     "build-clean": "rmdir build /s /q && tsc"
   },
-  "repository": {
-    "type": "git",
-    "url": "ssh://iotnxt@vs-ssh.visualstudio.com:22/IoT.nxt/_ssh/IoTnxt.TRex"
-  },
   "keywords": [
     "trex",
     "iot",
@@ -21,7 +17,7 @@
     "node",
     "ts"
   ],
-  "author": "Rouan van der Ende",
+  "author": "Tobie Albertsd IoT.nxt",
   "license": "ISC",
   "dependencies": {
     "@types/deep-diff": "0.0.31",
