@@ -19,7 +19,7 @@
     "node",
     "ts"
   ],
-  "author": "Rouan van der Ende",
+  "author": "Tobie Alberts",
   "license": "ISC",
   "dependencies": {
     "@types/deep-diff": "0.0.31",
