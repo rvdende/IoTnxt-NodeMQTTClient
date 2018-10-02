@@ -15,14 +15,12 @@ Enter the same GatewayId in /src/config.ts
 
 ```
 npm install
-npm run buildwatch
 ```
 
 In another terminal:
 
 ```
-cd build
-node main.js
+npm start
 ```
 
 Features:
