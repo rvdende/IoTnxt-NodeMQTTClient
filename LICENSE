@@ -1,21 +1,55 @@
-MIT License
+IoT.nxt API License & Terms of Use
 
-Copyright (c) 2018 IoT.nxt
+By installing, accessing, or otherwise using an IoT.nxt API within a software application, website, or product you (the “User”) create or a service you offer designed to provide access to a IoT.nxt service or application (“Application”), you are agreeing to these terms (“ API Terms”) with IoT.nxt Europe BV or IoT.nxt (Pty) Ltd, as the case may be, (“IoT.nxt”). As used in these API Terms, “IoT.nxt API” means any form of machine accessible application programming interface that provides access to a IoT.nxt service and any associated tools, including sample code that enables interactions with IoT.nxt’s services, and documentation that IoT.nxt makes available under these Terms, and includes all elements, components and executables of such API. IoT.nxt may change, amend or cancel these Terms at any time. Your use of the IoT.nxt API after the changes become effective means you agree to the new Terms. If you do not agree to the new Terms, please stop using the IoT.nxt API’s.
+1.	Licenses and Guidelines
+1.1.	IoT.nxt API License
+IoT.nxt grants you a limited, non-exclusive, non-assignable, non-transferable, revocable license to install, use, and make calls to IoT.nxt APIs to develop, test, and support your Application, and allow end users to use your integration of IoT.nxt APIs within your Application. You may use the IoT.nxt APIs only as expressly permitted in these API Terms, and for no other purposes whatsoever.
+1.2.	IoT.nxt API Guidelines
+When using the IoT.nxt APIs, you may not:
+1.2.1.	Use a IoT.nxt API in a way that could impair, harm or damage IoT.nxt, any IoT.nxt service or application, or anyone’s use of a IoT.nxt API, service or application;
+1.2.2.	Use a IoT.nxt API to disrupt, interfere with, or attempt to gain unauthorized access to services, servers, or networks connected to or which can be accessed via the IoT.nxt API;
+1.2.3.	Use a IoT.nxt API or allow any end user to use the Application in a way that violates applicable law, including:
+1.2.3.1.	Illegal activities, such as child pornography, gambling, piracy, violating copyright, trademark or other intellectual property laws.
+1.2.3.2.	Intending to exploit minors in any way.
+1.2.3.3.	Accessing or authorizing anyone to access the IoT.nxt API from an embargoed country.
+1.2.3.4.	Threatening, stalking, defaming, defrauding, degrading, victimizing or intimidating anyone for any reason.
+1.2.3.5.	Violating applicable privacy laws and regulations.
+1.2.4.	Reverse engineer, decompile or disassemble IoT.nxt APIs;
+1.2.5.	Use IoT.nxt APIs in any way that threatens the integrity, performance or reliability of IoT.nxt APIs or any IoT.nxt product or service, including performance or stress testing, or in any manner that works around any technical limitations in IoT.nxt APIs;
+1.2.6.	Request from a IoT.nxt API more than the minimum data that your Application needs to offer the customer the intended Application functionality;
+1.2.7.	Request from a IoT.nxt API any information outside any permissions granted by the user of your Application, if a IoT.nxt API requires permissions;
+1.2.8.	Redistribute or resell or sublicense or in any manner whatsoever commercialise or give access to  any IoT.nxt API, service or content; or
+1.2.9.	Falsify or alter any unique referral identifier in, or assigned to an Application, or otherwise obscure or alter the source of queries coming from an Application.
+2.	Security
+You warrant that your Application has been developed to operate with IoT.nxt API content in a secure manner. Your network, operating system and the software of your servers, databases, and computer systems (collectively, “Systems”) must be properly configured to securely operate your Application and store content collected through your Application (including the IoT.nxt API content). Your Application must use security measures to protect the private information of your users, of a standard not less than best industry practice.
+IoT.nxt may use technology to detect, prevent or limit the impact of any issues caused by your Application (before or instead of suspension of your access). This may include, for example, filtering to stop spam or limiting your access to the IoT.nxt API.
+You must have a process to respond to any vulnerabilities in your Application, and in the case of any vulnerabilities related to your Application’s connection to the IoT.nxt API discovered by you or reported to you by a third party, you agree that you will provide vulnerability details to IoT.nxt’s chief technology officer immediately.
+In the event of a data breach resulting from any aspect of the IoT.nxt API involving your Application or any content collected through your Application, you agree that you will contact the IoT.nxt chief technology officer immediately and provide details of the data breach.
+3.	Privacy
+3.1.	Where an Application seeks permission from an end user to access, collect, or transmit any user’s personal data from a IoT.nxt service or application, you must maintain a valid and up-to-date privacy policy. You are responsible for informing end users of your privacy policy. Your privacy policy must (i) comply with applicable laws and regulations, (ii) inform end users of the data you collect, and how that data is used, stored, secured and shared, and (iii) describe the controls available to end users to use, share, or access their personal data. You must also feature an easily accessible link to your privacy policy in the Application. Unauthorized use of end users’ personal data will be subject to immediate termination of your rights to use the IoT.nxt API.
+4.	Changes to IoT.nxt APIs
+IoT.nxt may change or discontinue the availability of some or all of the IoT.nxt APIs at any time for any reason without notice. Such changes may include removal of features, or the requirements of fees for previously free features. IoT.nxt may also impose limits on certain features and services or restrict your access to some or all of the IoT.nxt APIs. IoT.nxt may release subsequent versions of the IoT.nxt APIs and require that you use those subsequent versions, at your sole cost and expense. Your continued use of the IoT.nxt APIs following a subsequent release will be deemed your acceptance of modifications. Any IoT.nxt API designated “pre-release”, “preview”, or “beta” (“Beta API”), may not work in the same way as a final version. IoT.nxt may change or not release a final or commercial version of a Beta API in our sole discretion. All of our rights in these Terms may be exercised without prior notice or liability to you.
+5.	Feedback.
+If you give feedback about the IoT.nxt APIs to IoT.nxt, you give to IoT.nxt, without charge, the right to use, share and commercialize your feedback in any way and for any purpose. You will not give feedback that is subject to a license that requires IoT.nxt to license its software or documentation to third parties because IoT.nxt includes your feedback in them. These rights survive this agreement.
+6.	Confidentiality
+You may be given access to certain non-public information, software, and specifications relating to the IoT.nxt API (“Confidential Information”), which is confidential and proprietary to IoT.nxt. You may use Confidential Information only as necessary in exercising your rights granted under these API Terms and for no other reason whatsoever. You may not disclose any Confidential Information to any third party without IoT.nxt’s prior written consent. You agree that you will protect any Confidential Information from unauthorized use, access, or disclosure in the same manner that you would use to protect your own confidential and proprietary information.
+7.	Disclaimer and Limitation of Liability
+7.1.	Disclaimer of Warranties
+IoT.nxt make no warranties, express or implied, guarantees or conditions with respect to your use of the Iot.Nxt Api’s. You understand that use of the Iot.Nxt Api’s is at your own risk and that we provide Iot.Nxt Api’s on an “as is” basis “with all faults” and "as available." to the extent permitted under your local law, IoT.nxt excludes any implied warranties, including for merchantability, satisfactory quality, fitness for a particular purpose, workmanlike effort, and non-infringement. Nothing in these API terms are intended to affect those rights, if they are applicable. You acknowledge that computer and telecommunications systems are not fault-free and occasional periods of downtime occur. IoT.nxt does not guarantee that Iot.Nxt Api’s will be uninterrupted, timely, secure, or error-free or that content loss won't occur. You may be able to access third-party websites or services via Iot.Nxt Api’s; you acknowledge that IoT.nxt is not responsible for such websites or services or content that may be available there.
+7.2.	Limitation of Liability
+IoT.nxt will never be liable for any consequential, special, indirect, incidental, or punitive damages or lost profits. These limitations and exclusions apply even if this remedy doesn't fully compensate you for any losses or fails of its essential purpose or if IoT.nxt knew or should have known about the possibility of the damages. To the maximum extent permitted by law, these limitations and exclusions apply to anything or any claims related to these Terms or your use of any IoT.nxt API or the IoT.nxt icons. You may be held liable for any consequential, special, indirect, incidental, or punitive damages or lost profits as a result of your actions, it being understood that wrongfully using our commercial and intellectual property gives rise to the possibility of IoT.nxt incurring such damages and / or losses.
+8.	Termination
+IoT.nxt may immediately terminate or suspend these API Terms, any rights granted herein, and/or your license to the IoT.nxt APIs, in our sole discretion at any time, for any reason. You may terminate these API Terms at any time by ceasing your access to the IoT.nxt APIs. Upon termination, all licenses granted herein immediately expire and you must cease use of the IoT.nxt APIs. Neither party will not be liable to the other for any damages resulting solely from termination of these API Terms.
+9.	General Terms
+9.1.	Applicable Law
+9.1.1.	Outside South Africa. If you acquired the software in a place other than South Africa, then Netherlands law governs the interpretation of this agreement and applies to claims for breach of it. 
+9.1.2.	South Africa. If you acquired the software in South Africa, the laws of South Africa apply.
+9.2.	Support. Because the IoT.nxt APIs are provided “as is,” IoT.nxt may not provide support services for them.
+9.3.	Assignment and Delegation. You may not assign or delegate any rights or obligations under these Terms, including in connection with a change of control. Any purported assignment and delegation shall be ineffective. IoT.nxt may freely assign or delegate all rights and obligations under these Terms, fully or partially without notice to you.
+9.4.	Reservation of Rights. All rights not expressly granted herein are reserved by IoT.nxt. You acknowledge that all intellectual property rights within IoT.nxt APIs remain the property of IoT.nxt and nothing within these Terms will act to transfer any of these intellectual property rights to you.
+9.5.	No Waiver. Either party’s failure to act with respect to a breach of these Terms does not waive either party’s right to act with respect to that breach or subsequent similar or other breaches.
+9.6.	Survival. Sections of these API Terms that, by their terms, require performance after the termination or expiration of these API Terms will survive, for example, the proprietary rights of IoT.nxt and the confidentiality obligations.
+9.7.	Entire Agreement. These Terms (including the API Terms and any Additional Terms) and any documents incorporated into these Terms by reference, constitute the entire agreement between you and us regarding the IoT.nxt APIs. If some other commercial relationship is established, that relationship will be governed by a separate agreement.
+9.8.	Warranty. You represent and warrant that you have the authority to accept these API Terms on behalf of yourself, a company, and/or other entity, as applicable.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
