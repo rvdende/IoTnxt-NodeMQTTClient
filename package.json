@@ -6,8 +6,7 @@
   "scripts": {
     "start": "npm run build-clean && node ./build/main.js",
     "test": "node test.js",
-    "buildwatch": "tsc --w --lib es2015 ./src/main.ts --outDir ./build",
-    "build-clean": "rmdir build /s /q && tsc"
+    "buildwatch": "tsc --w --lib es2015 ./src/main.ts --outDir ./build"
   },
   "keywords": [
     "trex",
