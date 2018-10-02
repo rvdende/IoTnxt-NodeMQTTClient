@@ -38,7 +38,7 @@ iotnxtqueue.on("connect", ()=>{
 //The following interval will send values to the pllatfor every 2,5 seconds 
   setInterval(()=>{
     console.log("sending data...")
-    iotnxtqueue.updateState("asdf|1:zxcv|1", "hello", Math.random())
+    iotnxtqueue.updateState("Kichen|1:Stove|1", "StoveLight", Math.random())
     iotnxtqueue.publishState();
   },2500)
 
