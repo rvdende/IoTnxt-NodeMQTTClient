@@ -54,18 +54,28 @@ export class IotnxtQueue extends events.EventEmitter {
       this.connectGreenQ((err:Error,secret:any)=>{
         if (err) console.log(err);
         if (secret) {
-          console.log("can now connect to red queue")
-          
           this.connectRedQ((err:Error,result:any)=>{
             if (err) console.log(err);
             if (result) {
               console.log(result);
               this.register((err:Error, result:any)=>{
+
+
+                this.mqttRed.subscribe(this.secret.RoutingKeyBase+".REQ", (err:Error)=>{
+                  if (err) console.log(err);
+                });
+
+                this.mqttRed.on('message', (topic: any, message: any) => {
+                  var json = JSON.parse(message.toString());
+                  var payload = JSON.parse(Buffer.from(json.Payload, "base64").toString());
+                  this.emit('request', payload);
+                });
+
+
                 this.emit('connect');
+
               });
             }
-
-
           });
         }
       });
