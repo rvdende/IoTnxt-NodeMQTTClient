@@ -42,4 +42,10 @@ iotnxtqueue.on("connect", ()=>{
     iotnxtqueue.publishState();
   },2500)
 
+  // Logs out incoming requests from commander
+  iotnxtqueue.on('request', (request:any) => {
+    console.log("REQUEST:")
+    console.log(request);
+  });
+  
 })
