@@ -54,13 +54,12 @@ export class IotnxtQueue extends events.EventEmitter {
       this.connectGreenQ((err:Error,secret:any)=>{
         if (err) console.log(err);
         if (secret) {
+          console.log("can now connect to red queue")
           this.connectRedQ((err:Error,result:any)=>{
             if (err) console.log(err);
             if (result) {
               console.log(result);
               this.register((err:Error, result:any)=>{
-
-
                 this.mqttRed.subscribe(this.secret.RoutingKeyBase+".REQ", (err:Error)=>{
                   if (err) console.log(err);
                 });
@@ -71,9 +70,7 @@ export class IotnxtQueue extends events.EventEmitter {
                   this.emit('request', payload);
                 });
 
-
                 this.emit('connect');
-
               });
             }
           });
