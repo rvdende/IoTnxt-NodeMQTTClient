@@ -55,6 +55,7 @@ export class IotnxtQueue extends events.EventEmitter {
         if (err) console.log(err);
         if (secret) {
           console.log("can now connect to red queue")
+          
           this.connectRedQ((err:Error,result:any)=>{
             if (err) console.log(err);
             if (result) {
@@ -73,6 +74,8 @@ export class IotnxtQueue extends events.EventEmitter {
                 this.emit('connect');
               });
             }
+            
+            
           });
         }
       });
