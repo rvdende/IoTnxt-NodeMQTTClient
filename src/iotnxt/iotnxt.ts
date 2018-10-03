@@ -74,8 +74,8 @@ export class IotnxtQueue extends events.EventEmitter {
                 this.emit('connect');
               });
             }
-            
-            
+
+
           });
         }
       });
